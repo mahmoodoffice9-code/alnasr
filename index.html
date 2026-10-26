@@ -31,7 +31,6 @@
             overflow-x: hidden;
         }
 
-        /* 100% Transparent Overlay so Background Image is Crystal Clear */
         .bg-custom-clear {
             background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.25)), url('https://i.ibb.co/0VQwTfcP/pexels-carolyn-1776814-10759099.jpg');
             background-size: cover;
@@ -44,7 +43,6 @@
             font-family: 'Noto Sans Arabic', sans-serif;
         }
 
-        /* Completely Transparent Text Background Cards with Subtle Borders */
         .transparent-card {
             background: rgba(255, 255, 255, 0.12);
             backdrop-filter: blur(6px);
@@ -53,7 +51,6 @@
             box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.15);
         }
 
-        /* Dark Transparent Form Box for Maximum Clarity */
         .transparent-card-dark {
             background: rgba(11, 19, 43, 0.75);
             backdrop-filter: blur(10px);
@@ -68,22 +65,17 @@
     <!-- 1. Header & Navigation -->
     <header class="fixed top-0 left-0 right-0 z-50 bg-slate-950/80 backdrop-blur-md border-b border-white/10 shadow-md">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            
-            <!-- Logo -->
             <div class="flex flex-col">
                 <span class="text-2xl font-black tracking-wider text-gold font-serif drop-shadow">AL NASR</span>
                 <span class="text-xs text-slate-200 font-bold tracking-widest -mt-1" data-i18n="logo-sub">النصر كونسيرج للسيارات</span>
             </div>
 
-            <!-- Actions -->
             <div class="flex items-center gap-4">
-                <!-- Language Toggle -->
                 <button id="langToggle" onclick="toggleLanguage()" class="px-3.5 py-1.5 rounded-full border border-gold/60 text-xs font-bold text-gold hover:bg-gold hover:text-slate-950 transition-all duration-300 flex items-center gap-1.5 bg-slate-900/80 shadow">
                     <i data-lucide="globe" class="w-3.5 h-3.5"></i>
                     <span id="langText">عربي</span>
                 </button>
 
-                <!-- Direct WhatsApp CTA -->
                 <a href="https://wa.me/97400000000?text=Hello%20Al%20Nasr%20Concierge,%20I%20would%20like%20to%20make%20a%20VIP%20car%20inquiry." target="_blank" class="bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-4 py-2.5 rounded-xl text-xs sm:text-sm flex items-center gap-2 transition-all shadow-lg">
                     <i data-lucide="message-square" class="w-4 h-4"></i>
                     <span data-i18n="nav-cta">Quick Inquiry</span>
@@ -92,10 +84,10 @@
         </div>
     </header>
 
-    <!-- Main Content Wrapper -->
+    <!-- Main Content -->
     <main class="flex-grow pt-20">
 
-        <!-- 2. Hero Section -->
+        <!-- Hero Section -->
         <section class="relative min-h-[85vh] flex items-center justify-center overflow-hidden py-20 px-4 sm:px-6">
             <div class="max-w-5xl mx-auto text-center relative z-10 space-y-8">
                 
@@ -112,7 +104,6 @@
                     We source, inspect, negotiate, and deliver verified pre-owned luxury cars directly to your doorstep in Doha. Zero showroom stress.
                 </p>
 
-                <!-- Hero CTAs -->
                 <div data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="300" class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
                     <a href="https://wa.me/97400000000?text=Hi%20Al%20Nasr,%20I%20want%20to%20request%20a%20car%20sourcing%20service." target="_blank" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-gold to-goldDark text-slate-950 font-extrabold text-base hover:scale-105 transition-all shadow-xl flex items-center justify-center gap-3">
                         <i data-lucide="message-circle" class="w-5 h-5"></i>
@@ -125,7 +116,6 @@
                     </a>
                 </div>
 
-                <!-- Trust Badges -->
                 <div class="pt-12 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
                     <div data-aos="fade-up" data-aos-delay="400" class="p-4 rounded-2xl transparent-card flex items-center gap-4 text-left rtl:text-right">
                         <div class="p-3 rounded-xl bg-gold/20 text-gold shrink-0">
@@ -152,7 +142,7 @@
             </div>
         </section>
 
-        <!-- 3. How It Works -->
+        <!-- Process Section -->
         <section class="py-20 px-4 sm:px-6">
             <div class="max-w-7xl mx-auto">
                 <div data-aos="fade-up" class="text-center mb-16">
@@ -161,21 +151,18 @@
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <!-- Step 1 -->
                     <div data-aos="fade-up" data-aos-delay="100" class="relative p-8 rounded-2xl transparent-card transition-all hover:-translate-y-2 duration-300">
                         <div class="w-12 h-12 rounded-xl bg-gold/25 text-gold font-black text-xl flex items-center justify-center mb-6">01</div>
                         <h3 class="text-xl font-bold text-white mb-3 drop-shadow" data-i18n="step1-title">Tell Us Your Dream Car 📝</h3>
                         <p class="text-slate-200 text-sm font-medium leading-relaxed drop-shadow-sm" data-i18n="step1-desc">Share your preferred make, model, year, and budget range via our intake form or direct WhatsApp.</p>
                     </div>
 
-                    <!-- Step 2 -->
                     <div data-aos="fade-up" data-aos-delay="200" class="relative p-8 rounded-2xl transparent-card transition-all hover:-translate-y-2 duration-300">
                         <div class="w-12 h-12 rounded-xl bg-gold/25 text-gold font-black text-xl flex items-center justify-center mb-6">02</div>
                         <h3 class="text-xl font-bold text-white mb-3 drop-shadow" data-i18n="step2-title">We Inspect & Negotiate 🔍</h3>
                         <p class="text-slate-200 text-sm font-medium leading-relaxed drop-shadow-sm" data-i18n="step2-desc">Our certified local inspectors perform multi-point mechanical checks and negotiate the lowest market price.</p>
                     </div>
 
-                    <!-- Step 3 -->
                     <div data-aos="fade-up" data-aos-delay="300" class="relative p-8 rounded-2xl transparent-card transition-all hover:-translate-y-2 duration-300">
                         <div class="w-12 h-12 rounded-xl bg-gold/25 text-gold font-black text-xl flex items-center justify-center mb-6">03</div>
                         <h3 class="text-xl font-bold text-white mb-3 drop-shadow" data-i18n="step3-title">Doorstep Delivery & Transfer 🚗</h3>
@@ -185,7 +172,7 @@
             </div>
         </section>
 
-        <!-- 4. Featured Inventory -->
+        <!-- Fleet Inventory -->
         <section id="inventory" class="py-20 px-4 sm:px-6">
             <div class="max-w-7xl mx-auto">
                 <div data-aos="fade-up" class="flex flex-col md:flex-row md:items-end justify-between mb-12">
@@ -195,10 +182,7 @@
                     </div>
                 </div>
 
-                <!-- Cars Grid -->
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    
-                    <!-- Car Card 1 -->
                     <div data-aos="zoom-in-up" data-aos-delay="100" class="rounded-2xl transparent-card overflow-hidden hover:border-gold transition-all flex flex-col hover:-translate-y-2 duration-300">
                         <div class="relative h-56 bg-slate-900 overflow-hidden">
                             <img src="https://images.unsplash.com/photo-1590362891991-f776e747a588?auto=format&fit=crop&w=800&q=80" alt="Toyota Land Cruiser" class="w-full h-full object-cover">
@@ -226,7 +210,6 @@
                         </div>
                     </div>
 
-                    <!-- Car Card 2 -->
                     <div data-aos="zoom-in-up" data-aos-delay="200" class="rounded-2xl transparent-card overflow-hidden hover:border-gold transition-all flex flex-col hover:-translate-y-2 duration-300">
                         <div class="relative h-56 bg-slate-900 overflow-hidden">
                             <img src="https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?auto=format&fit=crop&w=800&q=80" alt="Porsche Cayenne S" class="w-full h-full object-cover">
@@ -254,7 +237,6 @@
                         </div>
                     </div>
 
-                    <!-- Car Card 3 -->
                     <div data-aos="zoom-in-up" data-aos-delay="300" class="rounded-2xl transparent-card overflow-hidden hover:border-gold transition-all flex flex-col hover:-translate-y-2 duration-300">
                         <div class="relative h-56 bg-slate-900 overflow-hidden">
                             <img src="https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=800&q=80" alt="Nissan Patrol Platinum" class="w-full h-full object-cover">
@@ -281,12 +263,11 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </section>
 
-        <!-- 5. VIP Buyer Advantages -->
+        <!-- Advantages Section -->
         <section class="py-20 px-4 sm:px-6">
             <div class="max-w-7xl mx-auto">
                 <div data-aos="fade-up" class="text-center mb-16">
@@ -295,7 +276,6 @@
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    
                     <div data-aos="flip-left" data-aos-delay="100" class="p-6 rounded-2xl transparent-card space-y-3">
                         <div class="p-3 w-fit rounded-xl bg-gold/25 text-gold">
                             <i data-lucide="sun-off" class="w-6 h-6"></i>
@@ -327,12 +307,11 @@
                         <h3 class="text-lg font-bold text-white drop-shadow" data-i18n="adv4-h">Discreet & Private</h3>
                         <p class="text-slate-200 text-xs sm:text-sm font-medium leading-relaxed drop-shadow-sm" data-i18n="adv4-p">Complete privacy protection for high-profile expats, diplomats, and local executives.</p>
                     </div>
-
                 </div>
             </div>
         </section>
 
-        <!-- 6. Lead Intake Form -->
+        <!-- Lead Form Section -->
         <section class="py-20 px-4 sm:px-6">
             <div class="max-w-3xl mx-auto">
                 <div data-aos="zoom-in" data-aos-duration="1000" class="p-8 sm:p-12 rounded-3xl transparent-card-dark space-y-8 text-white">
@@ -378,7 +357,7 @@
                             </select>
                         </div>
 
-                        <button type="submit" class="w-full py-4 rounded-xl bg-gradient-to-r from-gold to-goldDark text-slate-950 font-black text-base hover:opacity-95 transition-all shadow-xl flex items-center justify-center gap-2">
+                        <button type="submit" id="submitBtn" class="w-full py-4 rounded-xl bg-gradient-to-r from-gold to-goldDark text-slate-950 font-black text-base hover:opacity-95 transition-all shadow-xl flex items-center justify-center gap-2">
                             <span data-i18n="btn-submit">Submit Car Request →</span>
                         </button>
                     </form>
@@ -389,7 +368,7 @@
 
     </main>
 
-    <!-- 7. Footer Section -->
+    <!-- Footer -->
     <footer class="bg-slate-950/85 backdrop-blur-md border-t border-white/10 py-12 px-4 sm:px-6">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left rtl:md:text-right">
             <div>
@@ -405,16 +384,13 @@
         </div>
     </footer>
 
-    <!-- AOS JS Script -->
+    <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <!-- Translation Dictionary & Scripts -->
     <script>
-        // Initialize AOS Animations
-        AOS.init({
-            duration: 800,
-            once: true,
-            easing: 'ease-in-out'
-        });
+        AOS.init({ duration: 800, once: true, easing: 'ease-in-out' });
+
+        // Your Active Google Apps Script Webhook URL
+        const WEBHOOK_URL = "https://script.google.com/macros/s/AKfycbwCWVuSb-5b35teE3Ttdw6QdwuzqcTe8__fnwiFjFbtYQiR0o_tndxchDIDK7jC6xQwMA/exec";
 
         const translations = {
             en: {
@@ -530,17 +506,41 @@
             });
         }
 
-        function handleFormSubmit(e) {
+        async function handleFormSubmit(e) {
             e.preventDefault();
-            const name = document.getElementById('fullName').value;
-            const phone = document.getElementById('whatsappNum').value;
-            const car = document.getElementById('carModel').value;
-            const budget = document.getElementById('budgetRange').value;
-            const area = document.getElementById('deliveryArea').value;
+            const submitBtn = document.getElementById('submitBtn');
+            submitBtn.innerText = "Saving Data...";
+            submitBtn.disabled = true;
 
-            const text = `*New VIP Car Request - Al Nasr*%0A%0A*Name:* ${encodeURIComponent(name)}%0A*Phone:* ${encodeURIComponent(phone)}%0A*Car Requested:* ${encodeURIComponent(car)}%0A*Budget:* ${encodeURIComponent(budget)}%0A*Delivery Area:* ${encodeURIComponent(area)}`;
+            const payload = {
+                fullName: document.getElementById('fullName').value,
+                whatsappNum: document.getElementById('whatsappNum').value,
+                carModel: document.getElementById('carModel').value,
+                budgetRange: document.getElementById('budgetRange').value,
+                deliveryArea: document.getElementById('deliveryArea').value
+            };
+
+            // Send Data to Google Apps Script Webhook
+            try {
+                await fetch(WEBHOOK_URL, {
+                    method: "POST",
+                    mode: "no-cors",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(payload)
+                });
+            } catch (err) {
+                console.log("Sheet webhook error:", err);
+            }
+
+            // Redirect to WhatsApp
+            const text = `*New VIP Car Request - Al Nasr*%0A%0A*Name:* ${encodeURIComponent(payload.fullName)}%0A*Phone:* ${encodeURIComponent(payload.whatsappNum)}%0A*Car Requested:* ${encodeURIComponent(payload.carModel)}%0A*Budget:* ${encodeURIComponent(payload.budgetRange)}%0A*Delivery Area:* ${encodeURIComponent(payload.deliveryArea)}`;
             
-            window.open(`https://wa.me/97400000000?text=${text}`, '_blank');
+            submitBtn.innerText = "Redirecting...";
+            setTimeout(() => {
+                window.open(`https://wa.me/97400000000?text=${text}`, '_blank');
+                submitBtn.innerText = "Submit Car Request →";
+                submitBtn.disabled = false;
+            }, 600);
         }
 
         lucide.createIcons();
