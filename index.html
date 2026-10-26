@@ -13,9 +13,8 @@
             theme: {
                 extend: {
                     colors: {
-                        gold: '#B89528',
-                        goldDark: '#8A6D10',
-                        textDark: '#0B132B'
+                        gold: '#C5A059',
+                        goldDark: '#997A15'
                     }
                 }
             }
@@ -29,9 +28,9 @@
             color: #0B132B;
         }
 
-        /* Clear Visible Background Image with Minimal Soft Overlay */
+        /* 100% Transparent Overlay so Background Image is Crystal Clear */
         .bg-custom-clear {
-            background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.40), rgba(248, 250, 252, 0.55)), url('https://i.ibb.co/0VQwTfcP/pexels-carolyn-1776814-10759099.jpg');
+            background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.25)), url('https://i.ibb.co/0VQwTfcP/pexels-carolyn-1776814-10759099.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -42,45 +41,47 @@
             font-family: 'Noto Sans Arabic', sans-serif;
         }
 
-        .glass-card {
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.9);
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+        /* Completely Transparent Text Background Cards with Subtle Borders */
+        .transparent-card {
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.15);
         }
 
-        .glass-card-dark {
-            background: rgba(11, 19, 43, 0.88);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.25);
+        /* Dark Transparent Form Box for Maximum Clarity */
+        .transparent-card-dark {
+            background: rgba(11, 19, 43, 0.75);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(197, 160, 89, 0.4);
+            box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.3);
         }
     </style>
 </head>
 <body class="bg-custom-clear min-h-screen flex flex-col selection:bg-gold selection:text-white">
 
     <!-- 1. Header & Navigation -->
-    <header class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-300/80 shadow-sm">
+    <header class="fixed top-0 left-0 right-0 z-50 bg-slate-950/80 backdrop-blur-md border-b border-white/10 shadow-md">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             
             <!-- Logo -->
             <div class="flex flex-col">
-                <span class="text-2xl font-black tracking-wider text-goldDark font-serif">AL NASR</span>
-                <span class="text-xs text-slate-700 font-bold tracking-widest -mt-1" data-i18n="logo-sub">النصر كونسيرج للسيارات</span>
+                <span class="text-2xl font-black tracking-wider text-gold font-serif drop-shadow">AL NASR</span>
+                <span class="text-xs text-slate-200 font-bold tracking-widest -mt-1" data-i18n="logo-sub">النصر كونسيرج للسيارات</span>
             </div>
 
             <!-- Actions -->
             <div class="flex items-center gap-4">
                 <!-- Language Toggle -->
-                <button id="langToggle" onclick="toggleLanguage()" class="px-3.5 py-1.5 rounded-full border border-goldDark text-xs font-bold text-goldDark hover:bg-goldDark hover:text-white transition-all duration-300 flex items-center gap-1.5 bg-white/90 shadow-sm">
+                <button id="langToggle" onclick="toggleLanguage()" class="px-3.5 py-1.5 rounded-full border border-gold/60 text-xs font-bold text-gold hover:bg-gold hover:text-slate-950 transition-all duration-300 flex items-center gap-1.5 bg-slate-900/80 shadow">
                     <i data-lucide="globe" class="w-3.5 h-3.5"></i>
                     <span id="langText">عربي</span>
                 </button>
 
                 <!-- Direct WhatsApp CTA -->
-                <a href="https://wa.me/97400000000?text=Hello%20Al%20Nasr%20Concierge,%20I%20would%20like%20to%20make%20a%20VIP%20car%20inquiry." target="_blank" class="bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-4 py-2.5 rounded-xl text-xs sm:text-sm flex items-center gap-2 transition-all shadow-md">
+                <a href="https://wa.me/97400000000?text=Hello%20Al%20Nasr%20Concierge,%20I%20would%20like%20to%20make%20a%20VIP%20car%20inquiry." target="_blank" class="bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-4 py-2.5 rounded-xl text-xs sm:text-sm flex items-center gap-2 transition-all shadow-lg">
                     <i data-lucide="message-square" class="w-4 h-4"></i>
                     <span data-i18n="nav-cta">Quick Inquiry</span>
                 </a>
@@ -95,27 +96,27 @@
         <section class="relative min-h-[85vh] flex items-center justify-center overflow-hidden py-20 px-4 sm:px-6">
             <div class="max-w-5xl mx-auto text-center relative z-10 space-y-8">
                 
-                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-gold/40 bg-white/80 backdrop-blur-md text-goldDark text-xs font-extrabold uppercase tracking-widest shadow-sm">
-                    <i data-lucide="crown" class="w-3.5 h-3.5 text-goldDark"></i>
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-gold/40 bg-slate-900/70 backdrop-blur-md text-gold text-xs font-extrabold uppercase tracking-widest shadow">
+                    <i data-lucide="crown" class="w-3.5 h-3.5 text-gold"></i>
                     <span>Doha, Qatar 🇶🇦</span>
                 </div>
 
-                <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight leading-tight text-slate-950 drop-shadow-sm">
+                <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight leading-tight text-white drop-shadow-lg">
                     <span data-i18n="hero-h1">Qatar's Premier VIP Auto Concierge</span>
                 </h1>
 
-                <p class="text-base sm:text-xl text-slate-900 max-w-3xl mx-auto font-bold leading-relaxed drop-shadow-sm" data-i18n="hero-h2">
+                <p class="text-base sm:text-xl text-slate-100 max-w-3xl mx-auto font-bold leading-relaxed drop-shadow-md" data-i18n="hero-h2">
                     We source, inspect, negotiate, and deliver verified pre-owned luxury cars directly to your doorstep in Doha. Zero showroom stress.
                 </p>
 
                 <!-- Hero CTAs -->
                 <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-                    <a href="https://wa.me/97400000000?text=Hi%20Al%20Nasr,%20I%20want%20to%20request%20a%20car%20sourcing%20service." target="_blank" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-gold to-goldDark text-white font-extrabold text-base hover:opacity-95 transition-all shadow-lg flex items-center justify-center gap-3">
+                    <a href="https://wa.me/97400000000?text=Hi%20Al%20Nasr,%20I%20want%20to%20request%20a%20car%20sourcing%20service." target="_blank" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-gold to-goldDark text-slate-950 font-extrabold text-base hover:opacity-95 transition-all shadow-xl flex items-center justify-center gap-3">
                         <i data-lucide="message-circle" class="w-5 h-5"></i>
                         <span data-i18n="hero-cta-primary">Request a Car via WhatsApp</span>
                     </a>
                     
-                    <a href="#inventory" class="w-full sm:w-auto px-8 py-4 rounded-xl border border-slate-400 bg-white/90 backdrop-blur-md hover:bg-white text-slate-900 font-extrabold text-base transition-all flex items-center justify-center gap-2 shadow-md">
+                    <a href="#inventory" class="w-full sm:w-auto px-8 py-4 rounded-xl border border-white/30 bg-slate-900/80 backdrop-blur-md hover:bg-slate-900 text-white font-extrabold text-base transition-all flex items-center justify-center gap-2 shadow-lg">
                         <span data-i18n="hero-cta-secondary">Browse Sourced Fleet</span>
                         <i data-lucide="arrow-down" class="w-4 h-4"></i>
                     </a>
@@ -123,25 +124,25 @@
 
                 <!-- Trust Badges -->
                 <div class="pt-12 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-                    <div class="p-4 rounded-2xl glass-card flex items-center gap-4 text-left rtl:text-right">
-                        <div class="p-3 rounded-xl bg-gold/15 text-goldDark shrink-0">
+                    <div class="p-4 rounded-2xl transparent-card flex items-center gap-4 text-left rtl:text-right">
+                        <div class="p-3 rounded-xl bg-gold/20 text-gold shrink-0">
                             <i data-lucide="shield-check" class="w-6 h-6"></i>
                         </div>
-                        <span class="text-xs sm:text-sm font-extrabold text-slate-900" data-i18n="badge-1">100% Comprehensive Inspection Included</span>
+                        <span class="text-xs sm:text-sm font-extrabold text-white drop-shadow" data-i18n="badge-1">100% Comprehensive Inspection Included</span>
                     </div>
 
-                    <div class="p-4 rounded-2xl glass-card flex items-center gap-4 text-left rtl:text-right">
-                        <div class="p-3 rounded-xl bg-gold/15 text-goldDark shrink-0">
+                    <div class="p-4 rounded-2xl transparent-card flex items-center gap-4 text-left rtl:text-right">
+                        <div class="p-3 rounded-xl bg-gold/20 text-gold shrink-0">
                             <i data-lucide="truck" class="w-6 h-6"></i>
                         </div>
-                        <span class="text-xs sm:text-sm font-extrabold text-slate-900" data-i18n="badge-2">Doorstep Flatbed Delivery Across Doha</span>
+                        <span class="text-xs sm:text-sm font-extrabold text-white drop-shadow" data-i18n="badge-2">Doorstep Flatbed Delivery Across Doha</span>
                     </div>
 
-                    <div class="p-4 rounded-2xl glass-card flex items-center gap-4 text-left rtl:text-right">
-                        <div class="p-3 rounded-xl bg-gold/15 text-goldDark shrink-0">
+                    <div class="p-4 rounded-2xl transparent-card flex items-center gap-4 text-left rtl:text-right">
+                        <div class="p-3 rounded-xl bg-gold/20 text-gold shrink-0">
                             <i data-lucide="file-check-2" class="w-6 h-6"></i>
                         </div>
-                        <span class="text-xs sm:text-sm font-extrabold text-slate-900" data-i18n="badge-3">Hassle-Free Metrash2 Ownership Transfer</span>
+                        <span class="text-xs sm:text-sm font-extrabold text-white drop-shadow" data-i18n="badge-3">Hassle-Free Metrash2 Ownership Transfer</span>
                     </div>
                 </div>
 
@@ -152,30 +153,30 @@
         <section class="py-20 px-4 sm:px-6">
             <div class="max-w-7xl mx-auto">
                 <div class="text-center mb-16">
-                    <h2 class="text-3xl sm:text-4xl font-black text-slate-950" data-i18n="how-title">3-Step Concierge Process</h2>
-                    <p class="text-slate-900 mt-2 text-sm sm:text-base font-bold" data-i18n="how-subtitle">How we acquire your dream car with complete transparency</p>
+                    <h2 class="text-3xl sm:text-4xl font-black text-white drop-shadow-md" data-i18n="how-title">3-Step Concierge Process</h2>
+                    <p class="text-slate-200 mt-2 text-sm sm:text-base font-bold drop-shadow" data-i18n="how-subtitle">How we acquire your dream car with complete transparency</p>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <!-- Step 1 -->
-                    <div class="relative p-8 rounded-2xl glass-card transition-all">
-                        <div class="w-12 h-12 rounded-xl bg-gold/20 text-goldDark font-black text-xl flex items-center justify-center mb-6">01</div>
-                        <h3 class="text-xl font-bold text-slate-900 mb-3" data-i18n="step1-title">Tell Us Your Dream Car 📝</h3>
-                        <p class="text-slate-700 text-sm font-medium leading-relaxed" data-i18n="step1-desc">Share your preferred make, model, year, and budget range via our intake form or direct WhatsApp.</p>
+                    <div class="relative p-8 rounded-2xl transparent-card transition-all">
+                        <div class="w-12 h-12 rounded-xl bg-gold/25 text-gold font-black text-xl flex items-center justify-center mb-6">01</div>
+                        <h3 class="text-xl font-bold text-white mb-3 drop-shadow" data-i18n="step1-title">Tell Us Your Dream Car 📝</h3>
+                        <p class="text-slate-200 text-sm font-medium leading-relaxed drop-shadow-sm" data-i18n="step1-desc">Share your preferred make, model, year, and budget range via our intake form or direct WhatsApp.</p>
                     </div>
 
                     <!-- Step 2 -->
-                    <div class="relative p-8 rounded-2xl glass-card transition-all">
-                        <div class="w-12 h-12 rounded-xl bg-gold/20 text-goldDark font-black text-xl flex items-center justify-center mb-6">02</div>
-                        <h3 class="text-xl font-bold text-slate-900 mb-3" data-i18n="step2-title">We Inspect & Negotiate 🔍</h3>
-                        <p class="text-slate-700 text-sm font-medium leading-relaxed" data-i18n="step2-desc">Our certified local inspectors perform multi-point mechanical checks and negotiate the lowest market price.</p>
+                    <div class="relative p-8 rounded-2xl transparent-card transition-all">
+                        <div class="w-12 h-12 rounded-xl bg-gold/25 text-gold font-black text-xl flex items-center justify-center mb-6">02</div>
+                        <h3 class="text-xl font-bold text-white mb-3 drop-shadow" data-i18n="step2-title">We Inspect & Negotiate 🔍</h3>
+                        <p class="text-slate-200 text-sm font-medium leading-relaxed drop-shadow-sm" data-i18n="step2-desc">Our certified local inspectors perform multi-point mechanical checks and negotiate the lowest market price.</p>
                     </div>
 
                     <!-- Step 3 -->
-                    <div class="relative p-8 rounded-2xl glass-card transition-all">
-                        <div class="w-12 h-12 rounded-xl bg-gold/20 text-goldDark font-black text-xl flex items-center justify-center mb-6">03</div>
-                        <h3 class="text-xl font-bold text-slate-900 mb-3" data-i18n="step3-title">Doorstep Delivery & Transfer 🚗</h3>
-                        <p class="text-slate-700 text-sm font-medium leading-relaxed" data-i18n="step3-desc">Complete Metrash2 title transfer, insurance, and flatbed delivery directly right to your villa or office in Doha.</p>
+                    <div class="relative p-8 rounded-2xl transparent-card transition-all">
+                        <div class="w-12 h-12 rounded-xl bg-gold/25 text-gold font-black text-xl flex items-center justify-center mb-6">03</div>
+                        <h3 class="text-xl font-bold text-white mb-3 drop-shadow" data-i18n="step3-title">Doorstep Delivery & Transfer 🚗</h3>
+                        <p class="text-slate-200 text-sm font-medium leading-relaxed drop-shadow-sm" data-i18n="step3-desc">Complete Metrash2 title transfer, insurance, and flatbed delivery directly right to your villa or office in Doha.</p>
                     </div>
                 </div>
             </div>
@@ -186,8 +187,8 @@
             <div class="max-w-7xl mx-auto">
                 <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
                     <div>
-                        <h2 class="text-3xl sm:text-4xl font-black text-slate-950" data-i18n="fleet-title">Featured Sourced Fleet</h2>
-                        <p class="text-slate-900 mt-2 text-sm sm:text-base font-bold" data-i18n="fleet-subtitle">Hand-picked, fully verified pre-owned vehicles available in Qatar</p>
+                        <h2 class="text-3xl sm:text-4xl font-black text-white drop-shadow-md" data-i18n="fleet-title">Featured Sourced Fleet</h2>
+                        <p class="text-slate-200 mt-2 text-sm sm:text-base font-bold drop-shadow" data-i18n="fleet-subtitle">Hand-picked, fully verified pre-owned vehicles available in Qatar</p>
                     </div>
                 </div>
 
@@ -195,26 +196,26 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     
                     <!-- Car Card 1 -->
-                    <div class="rounded-2xl glass-card overflow-hidden hover:border-gold transition-all flex flex-col">
-                        <div class="relative h-56 bg-slate-200 overflow-hidden">
+                    <div class="rounded-2xl transparent-card overflow-hidden hover:border-gold transition-all flex flex-col">
+                        <div class="relative h-56 bg-slate-900 overflow-hidden">
                             <img src="https://images.unsplash.com/photo-1590362891991-f776e747a588?auto=format&fit=crop&w=800&q=80" alt="Toyota Land Cruiser" class="w-full h-full object-cover">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-70"></div>
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-80"></div>
                             <span class="absolute top-4 left-4 bg-emerald-600 text-white text-xs px-3 py-1 rounded-full font-bold shadow-md" data-i18n="badge-verified">Verified & Inspected</span>
                             <span class="absolute bottom-3 right-4 text-xs font-black text-white tracking-widest uppercase pointer-events-none drop-shadow">Al Nasr VIP</span>
                         </div>
                         <div class="p-6 flex flex-col flex-grow justify-between space-y-4">
                             <div>
-                                <h3 class="text-xl font-bold text-slate-900">2023 Toyota Land Cruiser VXR</h3>
-                                <div class="flex items-center gap-4 mt-3 text-xs text-slate-600 font-bold">
+                                <h3 class="text-xl font-bold text-white drop-shadow">2023 Toyota Land Cruiser VXR</h3>
+                                <div class="flex items-center gap-4 mt-3 text-xs text-slate-200 font-bold">
                                     <span>32,000 KM</span> • <span>3.5L Twin-Turbo</span> • <span>GCC Specs</span>
                                 </div>
                             </div>
-                            <div class="pt-4 border-t border-slate-200 flex items-center justify-between">
+                            <div class="pt-4 border-t border-white/20 flex items-center justify-between">
                                 <div>
-                                    <p class="text-xs text-slate-500 font-semibold" data-i18n="price-label">Target Price</p>
-                                    <p class="text-xl font-black text-goldDark">QAR 315,000</p>
+                                    <p class="text-xs text-slate-300 font-semibold" data-i18n="price-label">Target Price</p>
+                                    <p class="text-xl font-black text-gold">QAR 315,000</p>
                                 </div>
-                                <a href="https://wa.me/97400000000?text=I%20am%20interested%20in%20the%202023%20Toyota%20Land%20Cruiser%20VXR" target="_blank" class="px-4 py-2.5 rounded-xl bg-gold/15 hover:bg-goldDark hover:text-white text-goldDark font-bold text-xs transition-all flex items-center gap-1.5 border border-gold/40">
+                                <a href="https://wa.me/97400000000?text=I%20am%20interested%20in%20the%202023%20Toyota%20Land%20Cruiser%20VXR" target="_blank" class="px-4 py-2.5 rounded-xl bg-gold/20 hover:bg-gold hover:text-slate-950 text-gold font-bold text-xs transition-all flex items-center gap-1.5 border border-gold/40 shadow">
                                     <span data-i18n="inquire-btn">Inquire Car</span>
                                     <i data-lucide="chevron-right" class="w-4 h-4 rtl:rotate-180"></i>
                                 </a>
@@ -223,26 +224,26 @@
                     </div>
 
                     <!-- Car Card 2 -->
-                    <div class="rounded-2xl glass-card overflow-hidden hover:border-gold transition-all flex flex-col">
-                        <div class="relative h-56 bg-slate-200 overflow-hidden">
+                    <div class="rounded-2xl transparent-card overflow-hidden hover:border-gold transition-all flex flex-col">
+                        <div class="relative h-56 bg-slate-900 overflow-hidden">
                             <img src="https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?auto=format&fit=crop&w=800&q=80" alt="Porsche Cayenne S" class="w-full h-full object-cover">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-70"></div>
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-80"></div>
                             <span class="absolute top-4 left-4 bg-emerald-600 text-white text-xs px-3 py-1 rounded-full font-bold shadow-md" data-i18n="badge-verified">Verified & Inspected</span>
                             <span class="absolute bottom-3 right-4 text-xs font-black text-white tracking-widest uppercase pointer-events-none drop-shadow">Al Nasr VIP</span>
                         </div>
                         <div class="p-6 flex flex-col flex-grow justify-between space-y-4">
                             <div>
-                                <h3 class="text-xl font-bold text-slate-900">2022 Porsche Cayenne S</h3>
-                                <div class="flex items-center gap-4 mt-3 text-xs text-slate-600 font-bold">
+                                <h3 class="text-xl font-bold text-white drop-shadow">2022 Porsche Cayenne S</h3>
+                                <div class="flex items-center gap-4 mt-3 text-xs text-slate-200 font-bold">
                                     <span>24,500 KM</span> • <span>2.9L V6 Twin-Turbo</span> • <span>GCC Specs</span>
                                 </div>
                             </div>
-                            <div class="pt-4 border-t border-slate-200 flex items-center justify-between">
+                            <div class="pt-4 border-t border-white/20 flex items-center justify-between">
                                 <div>
-                                    <p class="text-xs text-slate-500 font-semibold" data-i18n="price-label">Target Price</p>
-                                    <p class="text-xl font-black text-goldDark">QAR 285,000</p>
+                                    <p class="text-xs text-slate-300 font-semibold" data-i18n="price-label">Target Price</p>
+                                    <p class="text-xl font-black text-gold">QAR 285,000</p>
                                 </div>
-                                <a href="https://wa.me/97400000000?text=I%20am%20interested%20in%20the%202022%20Porsche%20Cayenne%20S" target="_blank" class="px-4 py-2.5 rounded-xl bg-gold/15 hover:bg-goldDark hover:text-white text-goldDark font-bold text-xs transition-all flex items-center gap-1.5 border border-gold/40">
+                                <a href="https://wa.me/97400000000?text=I%20am%20interested%20in%20the%202022%20Porsche%20Cayenne%20S" target="_blank" class="px-4 py-2.5 rounded-xl bg-gold/20 hover:bg-gold hover:text-slate-950 text-gold font-bold text-xs transition-all flex items-center gap-1.5 border border-gold/40 shadow">
                                     <span data-i18n="inquire-btn">Inquire Car</span>
                                     <i data-lucide="chevron-right" class="w-4 h-4 rtl:rotate-180"></i>
                                 </a>
@@ -251,26 +252,26 @@
                     </div>
 
                     <!-- Car Card 3 -->
-                    <div class="rounded-2xl glass-card overflow-hidden hover:border-gold transition-all flex flex-col">
-                        <div class="relative h-56 bg-slate-200 overflow-hidden">
+                    <div class="rounded-2xl transparent-card overflow-hidden hover:border-gold transition-all flex flex-col">
+                        <div class="relative h-56 bg-slate-900 overflow-hidden">
                             <img src="https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=800&q=80" alt="Nissan Patrol Platinum" class="w-full h-full object-cover">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-70"></div>
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-80"></div>
                             <span class="absolute top-4 left-4 bg-emerald-600 text-white text-xs px-3 py-1 rounded-full font-bold shadow-md" data-i18n="badge-verified">Verified & Inspected</span>
                             <span class="absolute bottom-3 right-4 text-xs font-black text-white tracking-widest uppercase pointer-events-none drop-shadow">Al Nasr VIP</span>
                         </div>
                         <div class="p-6 flex flex-col flex-grow justify-between space-y-4">
                             <div>
-                                <h3 class="text-xl font-bold text-slate-900">2023 Nissan Patrol Platinum</h3>
-                                <div class="flex items-center gap-4 mt-3 text-xs text-slate-600 font-bold">
+                                <h3 class="text-xl font-bold text-white drop-shadow">2023 Nissan Patrol Platinum</h3>
+                                <div class="flex items-center gap-4 mt-3 text-xs text-slate-200 font-bold">
                                     <span>19,000 KM</span> • <span>5.6L V8</span> • <span>GCC Specs</span>
                                 </div>
                             </div>
-                            <div class="pt-4 border-t border-slate-200 flex items-center justify-between">
+                            <div class="pt-4 border-t border-white/20 flex items-center justify-between">
                                 <div>
-                                    <p class="text-xs text-slate-500 font-semibold" data-i18n="price-label">Target Price</p>
-                                    <p class="text-xl font-black text-goldDark">QAR 245,000</p>
+                                    <p class="text-xs text-slate-300 font-semibold" data-i18n="price-label">Target Price</p>
+                                    <p class="text-xl font-black text-gold">QAR 245,000</p>
                                 </div>
-                                <a href="https://wa.me/97400000000?text=I%20am%20interested%20in%20the%202023%20Nissan%20Patrol%20Platinum" target="_blank" class="px-4 py-2.5 rounded-xl bg-gold/15 hover:bg-goldDark hover:text-white text-goldDark font-bold text-xs transition-all flex items-center gap-1.5 border border-gold/40">
+                                <a href="https://wa.me/97400000000?text=I%20am%20interested%20in%20the%202023%20Nissan%20Patrol%20Platinum" target="_blank" class="px-4 py-2.5 rounded-xl bg-gold/20 hover:bg-gold hover:text-slate-950 text-gold font-bold text-xs transition-all flex items-center gap-1.5 border border-gold/40 shadow">
                                     <span data-i18n="inquire-btn">Inquire Car</span>
                                     <i data-lucide="chevron-right" class="w-4 h-4 rtl:rotate-180"></i>
                                 </a>
@@ -286,42 +287,42 @@
         <section class="py-20 px-4 sm:px-6">
             <div class="max-w-7xl mx-auto">
                 <div class="text-center mb-16">
-                    <h2 class="text-3xl sm:text-4xl font-black text-slate-950" data-i18n="adv-title">VIP Buyer Advantages</h2>
-                    <p class="text-slate-900 mt-2 text-sm sm:text-base font-bold" data-i18n="adv-subtitle">Why Qatar's high-profile expats & locals trust Al Nasr</p>
+                    <h2 class="text-3xl sm:text-4xl font-black text-white drop-shadow-md" data-i18n="adv-title">VIP Buyer Advantages</h2>
+                    <p class="text-slate-200 mt-2 text-sm sm:text-base font-bold drop-shadow" data-i18n="adv-subtitle">Why Qatar's high-profile expats & locals trust Al Nasr</p>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                     
-                    <div class="p-6 rounded-2xl glass-card space-y-3">
-                        <div class="p-3 w-fit rounded-xl bg-gold/20 text-goldDark">
+                    <div class="p-6 rounded-2xl transparent-card space-y-3">
+                        <div class="p-3 w-fit rounded-xl bg-gold/25 text-gold">
                             <i data-lucide="sun-off" class="w-6 h-6"></i>
                         </div>
-                        <h3 class="text-lg font-bold text-slate-900" data-i18n="adv1-h">Zero Showroom Hassle</h3>
-                        <p class="text-slate-700 text-xs sm:text-sm font-medium leading-relaxed" data-i18n="adv1-p">Avoid crowded car markets and heat; we bring verified options directly to your screen.</p>
+                        <h3 class="text-lg font-bold text-white drop-shadow" data-i18n="adv1-h">Zero Showroom Hassle</h3>
+                        <p class="text-slate-200 text-xs sm:text-sm font-medium leading-relaxed drop-shadow-sm" data-i18n="adv1-p">Avoid crowded car markets and heat; we bring verified options directly to your screen.</p>
                     </div>
 
-                    <div class="p-6 rounded-2xl glass-card space-y-3">
-                        <div class="p-3 w-fit rounded-xl bg-gold/20 text-goldDark">
+                    <div class="p-6 rounded-2xl transparent-card space-y-3">
+                        <div class="p-3 w-fit rounded-xl bg-gold/25 text-gold">
                             <i data-lucide="coins" class="w-6 h-6"></i>
                         </div>
-                        <h3 class="text-lg font-bold text-slate-900" data-i18n="adv2-h">Price Arbitration</h3>
-                        <p class="text-slate-700 text-xs sm:text-sm font-medium leading-relaxed" data-i18n="adv2-p">We negotiate aggressively directly with private sellers to save you maximum market rates.</p>
+                        <h3 class="text-lg font-bold text-white drop-shadow" data-i18n="adv2-h">Price Arbitration</h3>
+                        <p class="text-slate-200 text-xs sm:text-sm font-medium leading-relaxed drop-shadow-sm" data-i18n="adv2-p">We negotiate aggressively directly with private sellers to save you maximum market rates.</p>
                     </div>
 
-                    <div class="p-6 rounded-2xl glass-card space-y-3">
-                        <div class="p-3 w-fit rounded-xl bg-gold/20 text-goldDark">
+                    <div class="p-6 rounded-2xl transparent-card space-y-3">
+                        <div class="p-3 w-fit rounded-xl bg-gold/25 text-gold">
                             <i data-lucide="file-text" class="w-6 h-6"></i>
                         </div>
-                        <h3 class="text-lg font-bold text-slate-900" data-i18n="adv3-h">Full Documentation</h3>
-                        <p class="text-slate-700 text-xs sm:text-sm font-medium leading-relaxed" data-i18n="adv3-p">Complete Metrash2 title transfer, Fahes technical reports, and QID paperwork fully managed.</p>
+                        <h3 class="text-lg font-bold text-white drop-shadow" data-i18n="adv3-h">Full Documentation</h3>
+                        <p class="text-slate-200 text-xs sm:text-sm font-medium leading-relaxed drop-shadow-sm" data-i18n="adv3-p">Complete Metrash2 title transfer, Fahes technical reports, and QID paperwork fully managed.</p>
                     </div>
 
-                    <div class="p-6 rounded-2xl glass-card space-y-3">
-                        <div class="p-3 w-fit rounded-xl bg-gold/20 text-goldDark">
+                    <div class="p-6 rounded-2xl transparent-card space-y-3">
+                        <div class="p-3 w-fit rounded-xl bg-gold/25 text-gold">
                             <i data-lucide="lock" class="w-6 h-6"></i>
                         </div>
-                        <h3 class="text-lg font-bold text-slate-900" data-i18n="adv4-h">Discreet & Private</h3>
-                        <p class="text-slate-700 text-xs sm:text-sm font-medium leading-relaxed" data-i18n="adv4-p">Complete privacy protection for high-profile expats, diplomats, and local executives.</p>
+                        <h3 class="text-lg font-bold text-white drop-shadow" data-i18n="adv4-h">Discreet & Private</h3>
+                        <p class="text-slate-200 text-xs sm:text-sm font-medium leading-relaxed drop-shadow-sm" data-i18n="adv4-p">Complete privacy protection for high-profile expats, diplomats, and local executives.</p>
                     </div>
 
                 </div>
@@ -331,11 +332,11 @@
         <!-- 6. Lead Intake Form -->
         <section class="py-20 px-4 sm:px-6">
             <div class="max-w-3xl mx-auto">
-                <div class="p-8 sm:p-12 rounded-3xl glass-card-dark space-y-8 text-white">
+                <div class="p-8 sm:p-12 rounded-3xl transparent-card-dark space-y-8 text-white">
                     
                     <div class="text-center space-y-2">
-                        <h2 class="text-2xl sm:text-3xl font-black text-gold" data-i18n="form-title">Car Sourcing Request</h2>
-                        <p class="text-slate-200 text-xs sm:text-sm font-medium" data-i18n="form-subtitle">Fill out your preferences below & our concierge team will reach out within 2 hours.</p>
+                        <h2 class="text-2xl sm:text-3xl font-black text-gold drop-shadow" data-i18n="form-title">Car Sourcing Request</h2>
+                        <p class="text-slate-300 text-xs sm:text-sm font-medium" data-i18n="form-subtitle">Fill out your preferences below & our concierge team will reach out within 2 hours.</p>
                     </div>
 
                     <form id="sourcingForm" onsubmit="handleFormSubmit(event)" class="space-y-5">
@@ -374,7 +375,7 @@
                             </select>
                         </div>
 
-                        <button type="submit" class="w-full py-4 rounded-xl bg-gradient-to-r from-gold to-goldDark text-white font-black text-base hover:opacity-95 transition-all shadow-lg flex items-center justify-center gap-2">
+                        <button type="submit" class="w-full py-4 rounded-xl bg-gradient-to-r from-gold to-goldDark text-slate-950 font-black text-base hover:opacity-95 transition-all shadow-xl flex items-center justify-center gap-2">
                             <span data-i18n="btn-submit">Submit Car Request →</span>
                         </button>
                     </form>
@@ -386,17 +387,17 @@
     </main>
 
     <!-- 7. Footer Section -->
-    <footer class="bg-white/90 backdrop-blur-md border-t border-slate-300 py-12 px-4 sm:px-6">
+    <footer class="bg-slate-950/85 backdrop-blur-md border-t border-white/10 py-12 px-4 sm:px-6">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left rtl:md:text-right">
             <div>
-                <span class="text-xl font-black text-goldDark font-serif">AL NASR AUTO CONCIERGE</span>
-                <p class="text-xs text-slate-700 mt-1 font-bold">النصر لخدمات السيارات — Doha, State of Qatar 🇶🇦</p>
-                <p class="text-xs text-slate-500 mt-3 max-w-md" data-i18n="footer-disclaimer">Al Nasr is an independent licensed auto brokerage and VIP concierge service provider in Qatar.</p>
+                <span class="text-xl font-black text-gold font-serif drop-shadow">AL NASR AUTO CONCIERGE</span>
+                <p class="text-xs text-slate-300 mt-1 font-bold">النصر لخدمات السيارات — Doha, State of Qatar 🇶🇦</p>
+                <p class="text-xs text-slate-400 mt-3 max-w-md" data-i18n="footer-disclaimer">Al Nasr is an independent licensed auto brokerage and VIP concierge service provider in Qatar.</p>
             </div>
 
-            <div class="text-xs text-slate-600 space-y-1">
+            <div class="text-xs text-slate-400 space-y-1">
                 <p data-i18n="footer-copy">© 2026 Al Nasr Auto Concierge. All Rights Reserved.</p>
-                <p class="text-goldDark font-extrabold">VIP Luxury Sourcing Protocol</p>
+                <p class="text-gold font-extrabold">VIP Luxury Sourcing Protocol</p>
             </div>
         </div>
     </footer>
