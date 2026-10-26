@@ -8,6 +8,8 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- AOS Animation Library CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
@@ -26,6 +28,7 @@
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
             color: #0B132B;
+            overflow-x: hidden;
         }
 
         /* 100% Transparent Overlay so Background Image is Crystal Clear */
@@ -96,22 +99,22 @@
         <section class="relative min-h-[85vh] flex items-center justify-center overflow-hidden py-20 px-4 sm:px-6">
             <div class="max-w-5xl mx-auto text-center relative z-10 space-y-8">
                 
-                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-gold/40 bg-slate-900/70 backdrop-blur-md text-gold text-xs font-extrabold uppercase tracking-widest shadow">
+                <div data-aos="fade-down" data-aos-duration="1000" class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-gold/40 bg-slate-900/70 backdrop-blur-md text-gold text-xs font-extrabold uppercase tracking-widest shadow">
                     <i data-lucide="crown" class="w-3.5 h-3.5 text-gold"></i>
                     <span>Doha, Qatar 🇶🇦</span>
                 </div>
 
-                <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight leading-tight text-white drop-shadow-lg">
+                <h1 data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100" class="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight leading-tight text-white drop-shadow-lg">
                     <span data-i18n="hero-h1">Qatar's Premier VIP Auto Concierge</span>
                 </h1>
 
-                <p class="text-base sm:text-xl text-slate-100 max-w-3xl mx-auto font-bold leading-relaxed drop-shadow-md" data-i18n="hero-h2">
+                <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200" class="text-base sm:text-xl text-slate-100 max-w-3xl mx-auto font-bold leading-relaxed drop-shadow-md" data-i18n="hero-h2">
                     We source, inspect, negotiate, and deliver verified pre-owned luxury cars directly to your doorstep in Doha. Zero showroom stress.
                 </p>
 
                 <!-- Hero CTAs -->
-                <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-                    <a href="https://wa.me/97400000000?text=Hi%20Al%20Nasr,%20I%20want%20to%20request%20a%20car%20sourcing%20service." target="_blank" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-gold to-goldDark text-slate-950 font-extrabold text-base hover:opacity-95 transition-all shadow-xl flex items-center justify-center gap-3">
+                <div data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="300" class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+                    <a href="https://wa.me/97400000000?text=Hi%20Al%20Nasr,%20I%20want%20to%20request%20a%20car%20sourcing%20service." target="_blank" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-gold to-goldDark text-slate-950 font-extrabold text-base hover:scale-105 transition-all shadow-xl flex items-center justify-center gap-3">
                         <i data-lucide="message-circle" class="w-5 h-5"></i>
                         <span data-i18n="hero-cta-primary">Request a Car via WhatsApp</span>
                     </a>
@@ -124,21 +127,21 @@
 
                 <!-- Trust Badges -->
                 <div class="pt-12 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-                    <div class="p-4 rounded-2xl transparent-card flex items-center gap-4 text-left rtl:text-right">
+                    <div data-aos="fade-up" data-aos-delay="400" class="p-4 rounded-2xl transparent-card flex items-center gap-4 text-left rtl:text-right">
                         <div class="p-3 rounded-xl bg-gold/20 text-gold shrink-0">
                             <i data-lucide="shield-check" class="w-6 h-6"></i>
                         </div>
                         <span class="text-xs sm:text-sm font-extrabold text-white drop-shadow" data-i18n="badge-1">100% Comprehensive Inspection Included</span>
                     </div>
 
-                    <div class="p-4 rounded-2xl transparent-card flex items-center gap-4 text-left rtl:text-right">
+                    <div data-aos="fade-up" data-aos-delay="500" class="p-4 rounded-2xl transparent-card flex items-center gap-4 text-left rtl:text-right">
                         <div class="p-3 rounded-xl bg-gold/20 text-gold shrink-0">
                             <i data-lucide="truck" class="w-6 h-6"></i>
                         </div>
                         <span class="text-xs sm:text-sm font-extrabold text-white drop-shadow" data-i18n="badge-2">Doorstep Flatbed Delivery Across Doha</span>
                     </div>
 
-                    <div class="p-4 rounded-2xl transparent-card flex items-center gap-4 text-left rtl:text-right">
+                    <div data-aos="fade-up" data-aos-delay="600" class="p-4 rounded-2xl transparent-card flex items-center gap-4 text-left rtl:text-right">
                         <div class="p-3 rounded-xl bg-gold/20 text-gold shrink-0">
                             <i data-lucide="file-check-2" class="w-6 h-6"></i>
                         </div>
@@ -152,28 +155,28 @@
         <!-- 3. How It Works -->
         <section class="py-20 px-4 sm:px-6">
             <div class="max-w-7xl mx-auto">
-                <div class="text-center mb-16">
+                <div data-aos="fade-up" class="text-center mb-16">
                     <h2 class="text-3xl sm:text-4xl font-black text-white drop-shadow-md" data-i18n="how-title">3-Step Concierge Process</h2>
                     <p class="text-slate-200 mt-2 text-sm sm:text-base font-bold drop-shadow" data-i18n="how-subtitle">How we acquire your dream car with complete transparency</p>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <!-- Step 1 -->
-                    <div class="relative p-8 rounded-2xl transparent-card transition-all">
+                    <div data-aos="fade-up" data-aos-delay="100" class="relative p-8 rounded-2xl transparent-card transition-all hover:-translate-y-2 duration-300">
                         <div class="w-12 h-12 rounded-xl bg-gold/25 text-gold font-black text-xl flex items-center justify-center mb-6">01</div>
                         <h3 class="text-xl font-bold text-white mb-3 drop-shadow" data-i18n="step1-title">Tell Us Your Dream Car 📝</h3>
                         <p class="text-slate-200 text-sm font-medium leading-relaxed drop-shadow-sm" data-i18n="step1-desc">Share your preferred make, model, year, and budget range via our intake form or direct WhatsApp.</p>
                     </div>
 
                     <!-- Step 2 -->
-                    <div class="relative p-8 rounded-2xl transparent-card transition-all">
+                    <div data-aos="fade-up" data-aos-delay="200" class="relative p-8 rounded-2xl transparent-card transition-all hover:-translate-y-2 duration-300">
                         <div class="w-12 h-12 rounded-xl bg-gold/25 text-gold font-black text-xl flex items-center justify-center mb-6">02</div>
                         <h3 class="text-xl font-bold text-white mb-3 drop-shadow" data-i18n="step2-title">We Inspect & Negotiate 🔍</h3>
                         <p class="text-slate-200 text-sm font-medium leading-relaxed drop-shadow-sm" data-i18n="step2-desc">Our certified local inspectors perform multi-point mechanical checks and negotiate the lowest market price.</p>
                     </div>
 
                     <!-- Step 3 -->
-                    <div class="relative p-8 rounded-2xl transparent-card transition-all">
+                    <div data-aos="fade-up" data-aos-delay="300" class="relative p-8 rounded-2xl transparent-card transition-all hover:-translate-y-2 duration-300">
                         <div class="w-12 h-12 rounded-xl bg-gold/25 text-gold font-black text-xl flex items-center justify-center mb-6">03</div>
                         <h3 class="text-xl font-bold text-white mb-3 drop-shadow" data-i18n="step3-title">Doorstep Delivery & Transfer 🚗</h3>
                         <p class="text-slate-200 text-sm font-medium leading-relaxed drop-shadow-sm" data-i18n="step3-desc">Complete Metrash2 title transfer, insurance, and flatbed delivery directly right to your villa or office in Doha.</p>
@@ -185,7 +188,7 @@
         <!-- 4. Featured Inventory -->
         <section id="inventory" class="py-20 px-4 sm:px-6">
             <div class="max-w-7xl mx-auto">
-                <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                <div data-aos="fade-up" class="flex flex-col md:flex-row md:items-end justify-between mb-12">
                     <div>
                         <h2 class="text-3xl sm:text-4xl font-black text-white drop-shadow-md" data-i18n="fleet-title">Featured Sourced Fleet</h2>
                         <p class="text-slate-200 mt-2 text-sm sm:text-base font-bold drop-shadow" data-i18n="fleet-subtitle">Hand-picked, fully verified pre-owned vehicles available in Qatar</p>
@@ -196,7 +199,7 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     
                     <!-- Car Card 1 -->
-                    <div class="rounded-2xl transparent-card overflow-hidden hover:border-gold transition-all flex flex-col">
+                    <div data-aos="zoom-in-up" data-aos-delay="100" class="rounded-2xl transparent-card overflow-hidden hover:border-gold transition-all flex flex-col hover:-translate-y-2 duration-300">
                         <div class="relative h-56 bg-slate-900 overflow-hidden">
                             <img src="https://images.unsplash.com/photo-1590362891991-f776e747a588?auto=format&fit=crop&w=800&q=80" alt="Toyota Land Cruiser" class="w-full h-full object-cover">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-80"></div>
@@ -224,7 +227,7 @@
                     </div>
 
                     <!-- Car Card 2 -->
-                    <div class="rounded-2xl transparent-card overflow-hidden hover:border-gold transition-all flex flex-col">
+                    <div data-aos="zoom-in-up" data-aos-delay="200" class="rounded-2xl transparent-card overflow-hidden hover:border-gold transition-all flex flex-col hover:-translate-y-2 duration-300">
                         <div class="relative h-56 bg-slate-900 overflow-hidden">
                             <img src="https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?auto=format&fit=crop&w=800&q=80" alt="Porsche Cayenne S" class="w-full h-full object-cover">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-80"></div>
@@ -252,7 +255,7 @@
                     </div>
 
                     <!-- Car Card 3 -->
-                    <div class="rounded-2xl transparent-card overflow-hidden hover:border-gold transition-all flex flex-col">
+                    <div data-aos="zoom-in-up" data-aos-delay="300" class="rounded-2xl transparent-card overflow-hidden hover:border-gold transition-all flex flex-col hover:-translate-y-2 duration-300">
                         <div class="relative h-56 bg-slate-900 overflow-hidden">
                             <img src="https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=800&q=80" alt="Nissan Patrol Platinum" class="w-full h-full object-cover">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-80"></div>
@@ -286,14 +289,14 @@
         <!-- 5. VIP Buyer Advantages -->
         <section class="py-20 px-4 sm:px-6">
             <div class="max-w-7xl mx-auto">
-                <div class="text-center mb-16">
+                <div data-aos="fade-up" class="text-center mb-16">
                     <h2 class="text-3xl sm:text-4xl font-black text-white drop-shadow-md" data-i18n="adv-title">VIP Buyer Advantages</h2>
                     <p class="text-slate-200 mt-2 text-sm sm:text-base font-bold drop-shadow" data-i18n="adv-subtitle">Why Qatar's high-profile expats & locals trust Al Nasr</p>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                     
-                    <div class="p-6 rounded-2xl transparent-card space-y-3">
+                    <div data-aos="flip-left" data-aos-delay="100" class="p-6 rounded-2xl transparent-card space-y-3">
                         <div class="p-3 w-fit rounded-xl bg-gold/25 text-gold">
                             <i data-lucide="sun-off" class="w-6 h-6"></i>
                         </div>
@@ -301,7 +304,7 @@
                         <p class="text-slate-200 text-xs sm:text-sm font-medium leading-relaxed drop-shadow-sm" data-i18n="adv1-p">Avoid crowded car markets and heat; we bring verified options directly to your screen.</p>
                     </div>
 
-                    <div class="p-6 rounded-2xl transparent-card space-y-3">
+                    <div data-aos="flip-left" data-aos-delay="200" class="p-6 rounded-2xl transparent-card space-y-3">
                         <div class="p-3 w-fit rounded-xl bg-gold/25 text-gold">
                             <i data-lucide="coins" class="w-6 h-6"></i>
                         </div>
@@ -309,7 +312,7 @@
                         <p class="text-slate-200 text-xs sm:text-sm font-medium leading-relaxed drop-shadow-sm" data-i18n="adv2-p">We negotiate aggressively directly with private sellers to save you maximum market rates.</p>
                     </div>
 
-                    <div class="p-6 rounded-2xl transparent-card space-y-3">
+                    <div data-aos="flip-left" data-aos-delay="300" class="p-6 rounded-2xl transparent-card space-y-3">
                         <div class="p-3 w-fit rounded-xl bg-gold/25 text-gold">
                             <i data-lucide="file-text" class="w-6 h-6"></i>
                         </div>
@@ -317,7 +320,7 @@
                         <p class="text-slate-200 text-xs sm:text-sm font-medium leading-relaxed drop-shadow-sm" data-i18n="adv3-p">Complete Metrash2 title transfer, Fahes technical reports, and QID paperwork fully managed.</p>
                     </div>
 
-                    <div class="p-6 rounded-2xl transparent-card space-y-3">
+                    <div data-aos="flip-left" data-aos-delay="400" class="p-6 rounded-2xl transparent-card space-y-3">
                         <div class="p-3 w-fit rounded-xl bg-gold/25 text-gold">
                             <i data-lucide="lock" class="w-6 h-6"></i>
                         </div>
@@ -332,7 +335,7 @@
         <!-- 6. Lead Intake Form -->
         <section class="py-20 px-4 sm:px-6">
             <div class="max-w-3xl mx-auto">
-                <div class="p-8 sm:p-12 rounded-3xl transparent-card-dark space-y-8 text-white">
+                <div data-aos="zoom-in" data-aos-duration="1000" class="p-8 sm:p-12 rounded-3xl transparent-card-dark space-y-8 text-white">
                     
                     <div class="text-center space-y-2">
                         <h2 class="text-2xl sm:text-3xl font-black text-gold drop-shadow" data-i18n="form-title">Car Sourcing Request</h2>
@@ -402,8 +405,17 @@
         </div>
     </footer>
 
+    <!-- AOS JS Script -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <!-- Translation Dictionary & Scripts -->
     <script>
+        // Initialize AOS Animations
+        AOS.init({
+            duration: 800,
+            once: true,
+            easing: 'ease-in-out'
+        });
+
         const translations = {
             en: {
                 "logo-sub": "النصر كونسيرج للسيارات",
