@@ -389,7 +389,7 @@
     <script>
         AOS.init({ duration: 800, once: true, easing: 'ease-in-out' });
 
-        // Your Active Google Apps Script Webhook URL
+        // Active Google Apps Script Webhook URL
         const WEBHOOK_URL = "https://script.google.com/macros/s/AKfycbwCWVuSb-5b35teE3Ttdw6QdwuzqcTe8__fnwiFjFbtYQiR0o_tndxchDIDK7jC6xQwMA/exec";
 
         const translations = {
@@ -512,15 +512,21 @@
             submitBtn.innerText = "Saving Data...";
             submitBtn.disabled = true;
 
+            // Extract phone input
+            let rawPhone = document.getElementById('whatsappNum').value;
+            
+            // Strip country code (+974), spaces, and hyphens so ONLY clean digits save in sheet
+            let cleanPhoneNum = rawPhone.replace(/\+974|\+|\s|-/g, '');
+
             const payload = {
                 fullName: document.getElementById('fullName').value,
-                whatsappNum: document.getElementById('whatsappNum').value,
+                whatsappNum: cleanPhoneNum, // Raw number saved to Google Sheet
                 carModel: document.getElementById('carModel').value,
                 budgetRange: document.getElementById('budgetRange').value,
                 deliveryArea: document.getElementById('deliveryArea').value
             };
 
-            // Send Data to Google Apps Script Webhook
+            // 1. Send Data to Google Apps Script Webhook
             try {
                 await fetch(WEBHOOK_URL, {
                     method: "POST",
@@ -532,12 +538,12 @@
                 console.log("Sheet webhook error:", err);
             }
 
-            // Redirect to WhatsApp
-            const text = `*New VIP Car Request - Al Nasr*%0A%0A*Name:* ${encodeURIComponent(payload.fullName)}%0A*Phone:* ${encodeURIComponent(payload.whatsappNum)}%0A*Car Requested:* ${encodeURIComponent(payload.carModel)}%0A*Budget:* ${encodeURIComponent(payload.budgetRange)}%0A*Delivery Area:* ${encodeURIComponent(payload.deliveryArea)}`;
+            // 2. Redirect to WhatsApp with pre-filled details
+            const text = `*New VIP Car Request - Al Nasr*%0A%0A*Name:* ${encodeURIComponent(payload.fullName)}%0A*Phone:* ${encodeURIComponent(cleanPhoneNum)}%0A*Car Requested:* ${encodeURIComponent(payload.carModel)}%0A*Budget:* ${encodeURIComponent(payload.budgetRange)}%0A*Delivery Area:* ${encodeURIComponent(payload.deliveryArea)}`;
             
             submitBtn.innerText = "Redirecting...";
             setTimeout(() => {
-                window.open(`https://wa.me/97400000000?text=${text}`, '_blank');
+                window.open(`https://wa.me/974${cleanPhoneNum}?text=${text}`, '_blank');
                 submitBtn.innerText = "Submit Car Request →";
                 submitBtn.disabled = false;
             }, 600);
